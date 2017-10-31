@@ -14,10 +14,10 @@
 
 
 
-### Software Design Principles
+## Software Design Principles
 
 
-## Separation of Concerns
+### Separation of Concerns
 
 Logical separation between pieces or "layers" of an application.
 ```(javascript)
@@ -70,7 +70,7 @@ class Cart extends Component {
 ```
 Another example of Separation of concerns in React would be using Redux to handle state changes and propagation throughout application.
 
-## Single Responsibility
+### Single Responsibility
 
 Consider:
 ```(javascript)
@@ -92,7 +92,7 @@ We now have 2 discrete functions that can be individually used, tested or debugg
 The responsibility of each function is clearly defined by the name (or by tests that describe it).
 
 
-## Composition
+### Composition
 
 Building on the previous example, how can we compose small, well-defined, discrete pieces of functionality to build more complex functionality.
 
@@ -115,7 +115,7 @@ const sortAndReverse = string => reverse(sort(string));
 ```
 
 
-## LoD / Encapsulation
+### LoD / Encapsulation
 
 Law of Demeter or principle of least knowledge. Components should not know or attempt to modify the inner workings of others (black box).
 React example:
@@ -134,7 +134,7 @@ i.e.
 dropdown.sortOptions('asc');
 ```
 
-## DRY
+### DRY
 
 Don't repeat yourself!
 But also don't try to optimize prematurely.
