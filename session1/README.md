@@ -109,6 +109,9 @@ Some libraries provide more functionality for composing functions:
 ```(javascript)
 const sortAndReverse = compose(sort, reverse);
 sortAndReverse('fedcba') // fedcba
+
+or ES6 version
+const sortAndReverse = string => reverse(sort(string));
 ```
 
 
@@ -117,13 +120,11 @@ sortAndReverse('fedcba') // fedcba
 Law of Demeter or principle of least knowledge. Components should not know or attempt to modify the inner workings of others (black box).
 React example:
 ```(javascript)
-
 const options = ['one', 'two', 'three'];
 const dropdown = <DropdownComponent items={ options } />;
 
 // THIS IS TERRIBLE NEVER DO THIS
 dropdown.state.optionList.orderAscending();
-
 ```
 Logic related to how the dropdown renders itself should be *encapsulated* within the dropdown component.
 No one outside should be directly calling methods on properties on this dropdown component.
@@ -131,7 +132,6 @@ Any functionality that should be "public" should be exposed through a clear inte
 i.e.
 ```(javascript)
 dropdown.sortOptions('asc');
-
 ```
 
 ## DRY
