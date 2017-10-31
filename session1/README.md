@@ -31,7 +31,6 @@ class Cart extends Component {
       )
   }
 }
-
 ```
 In the above example we are calculating tax in a component meant for just rendering some UI.
 What are some problems with this?
@@ -66,7 +65,6 @@ class Cart extends Component {
     return subTotal + tax;
   }
 }
-
 ```
 Another example of Separation of concerns in React would be using Redux to handle state changes and propagation throughout application.
 
@@ -128,6 +126,7 @@ dropdown.state.optionList.orderAscending();
 ```
 Logic related to how the dropdown renders itself should be *encapsulated* within the dropdown component.
 No one outside should be directly calling methods on properties on this dropdown component.
+
 Any functionality that should be "public" should be exposed through a clear interface with limited "side effects".
 i.e.
 ```(javascript)
@@ -137,10 +136,14 @@ dropdown.sortOptions('asc');
 ### DRY
 
 Don't repeat yourself!
+
 But also don't try to optimize prematurely.
+
 When you discover duplicated functionality, think about how it can be encapsulated and shared.
-Within your UI: duplicated markup should be separated into it's own component and configured via props.
-Within business logic: duplicated code can be separated into it's own module with a public interface to be used by any other module.
+
+In the UI: duplicated markup should be separated into it's own component and configured via props.
+
+In the business logic: duplicated code can be separated into it's own module with a public 'interface' to be used by any other module.
 
 
 
