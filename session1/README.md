@@ -55,7 +55,7 @@ class Cart extends Component {
   render() {
     return (
         <p class="total">
-          { this.calculateTotal(this.state.subTotal) } // this component should not be responsible at all for calculations
+          { this.calculateTotal(this.state.subTotal) }
         </p>
       )
   }
@@ -68,9 +68,9 @@ class Cart extends Component {
 }
 
 ```
-Another example of SoC is using Redux to handle state changes and propagation throughout application.
+Another example of Separation of concerns in React would be using Redux to handle state changes and propagation throughout application.
 
-## Single Responsibility (when is a function doing too much?)
+## Single Responsibility
 
 Consider:
 ```(javascript)
@@ -134,7 +134,7 @@ dropdown.sortOptions('asc');
 
 ```
 
-## DRY (reuse)
+## DRY
 
 Don't repeat yourself!
 But also don't try to optimize prematurely.
