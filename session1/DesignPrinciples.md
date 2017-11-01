@@ -133,3 +133,31 @@ In the business logic: duplicated code can be separated into it's own module wit
 
 
 ### Abstraction
+
+Abstraction can be used to eliminate tight coupling in a system or to mask complexity in some implementation.
+
+Meant to separate functionality from it's implementation in order to provide flexibility in growing/evolving systems.
+
+```(javascript)
+fetchSomeData()
+  .then(data => {
+      // do something with data
+      console.log('Successfully fetched data:', data);
+    })
+  .catch(error => {
+      console.log('Failed to fetch data:', error);
+    });
+```
+**OR**
+```(javascript)
+import logger from './logger';
+
+fetchSomeData()
+  .then(data => {
+      // do something with data
+      logger.log('Successfully fetched data:', data);
+    })
+  .catch(error => {
+      logger.error('Failed to fetch data:', error);
+    });
+```
