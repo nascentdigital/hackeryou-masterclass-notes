@@ -12,7 +12,7 @@
 
 ### Distributed
 
-[## Software Design Principles](DesignPrinciples.md)
+## [Software Design Principles](DesignPrinciples.md)
 
 
 ## Recursion
