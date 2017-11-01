@@ -3,7 +3,7 @@
 ### Separation of Concerns
 
 Logical separation between pieces or "layers" of an application.
-```(javascript)
+```jsx harmony
 class Cart extends Component {
 
   render() {
@@ -19,7 +19,7 @@ In the above example we are calculating tax in a component meant for just render
 What are some problems with this?
 
 Two ways:
-```(javascript)
+```jsx harmony
 render() {
   return (
       <p class="total">
@@ -29,7 +29,7 @@ render() {
 }
 ```
 **OR**
-```(javascript)
+```jsx harmony
 import TaxCalculator from 'tax-calc';
 
 class Cart extends Component {
@@ -57,7 +57,7 @@ Loose vs Tight coupling
 
 Law of Demeter or principle of least knowledge. Components should not know or attempt to modify the inner workings of others (black box).
 React example:
-```(javascript)
+```jsx harmony
 const options = ['one', 'two', 'three'];
 const dropdown = <DropdownComponent items={ options } />;
 
@@ -69,7 +69,7 @@ No one outside should be directly calling methods on properties on this dropdown
 
 Any functionality that should be "public" should be exposed through a clear interface with limited "side effects".
 i.e.
-```(javascript)
+```jsx harmony
 dropdown.sortOptions('asc');
 ```
 
@@ -77,13 +77,13 @@ dropdown.sortOptions('asc');
 ### Single Responsibility
 
 Consider:
-```(javascript)
+```jsx harmony
 function sortAndReverseString(string) {};
 ```
 This function is challenging to debug & write automated tests for. How do we know if the sorting is failing or the reversing is failing if both are manipulating the string.
 
 What if we only want to sort? Or only reverse?
-```(javascript)
+```jsx harmony
 function sort(string) {
   return string.split('').sort().join('');
 }
@@ -100,7 +100,7 @@ The responsibility of each function is clearly defined by the name (or by tests 
 
 Building on the previous example, how can we compose small, well-defined, discrete pieces of functionality to build more complex functionality.
 
-```(javascript)
+```jsx harmony
 // Straight forward
 const sortedString = sort('fedcba'); // abcdef
 const sortedAndReversed = reverse(sortedString); // fedcba
@@ -110,7 +110,7 @@ const sortedAndReversed = reverse(sort(myString))
 ```
 
 Some libraries provide more functionality for composing functions:
-```(javascript)
+```jsx harmony
 const sortAndReverse = compose(sort, reverse);
 sortAndReverse('fedcba') // fedcba
 
@@ -138,7 +138,7 @@ Abstraction can be used to eliminate tight coupling in a system or to mask compl
 
 Meant to separate functionality from it's implementation in order to provide flexibility in growing/evolving systems.
 
-```(javascript)
+```jsx harmony
 fetchSomeData()
   .then(data => {
       // do something with data
@@ -149,7 +149,8 @@ fetchSomeData()
     });
 ```
 **OR**
-```(javascript)
+
+```jsx harmony
 import logger from './logger';
 
 fetchSomeData()
