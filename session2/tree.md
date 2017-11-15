@@ -7,6 +7,8 @@ A hierarchical data structure with a root node, and subtrees of children with a 
 
 I know we are all familiar with what the DOM is... that really cool interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document. 
 
+But what makes a tree?
+
 ## Let's take a look at how you would implement it...
 
 ### Let's define our Node and Tree
