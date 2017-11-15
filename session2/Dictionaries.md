@@ -139,13 +139,16 @@ For dictionary, since it is a key-value store, there is no way you can sort valu
 The object has to somehow be converted into a list and sorted from there.
 
 ```ecmascript 6
+// retrive all employees by their key
 const employeeKeys = Object.keys(employees)
-// sort descending by id
+// create an array of employee id's
 const ids = employeeKeys.map(employeeKey => {
   return employees[employeeKey].id
 })
 
+// sort employees
 ids.sort()
+// recreate an array with employees by id
 const sortedEmployees = ids.map(id => employees[id])
 ```
 ***
