@@ -3,21 +3,21 @@ An array is an ordered collection of data (either primitive or object depending 
 
 ```ecmascript 6
 const ceo = {
-    id: '2',
-    name: 'Clark',
-    position: 'CEO'
-  }
+  id: '2',
+  name: 'Clark',
+  position: 'CEO'
+}
 const cto = {
-    id: '1',
-    name: 'Diana',
-    position: 'CTO'
-  }
+  id: '1',
+  name: 'Diana',
+  position: 'CTO'
+}
  const coo = {
-    id: '3',
-    name: 'Bruce',
-    position: 'COO'
-  }
-]
+  id: '3',
+  name: 'Bruce',
+  position: 'COO'
+}
+
 ```
 
 ```ecmascript 6
@@ -38,14 +38,17 @@ let coo = employees[2] // Bruce
 This works, but what type of problems can occur?
 
 ```ecmascript 6
+// remove an employee from the front of the array
 employees.shift()
 
+// add an employee at the 2nd index
 employees.splice(2, 0, {
   id: '4',
   name: 'Barry',
   position: 'Manager'
 })
 
+// our employees are no longer at the same indexes
 ceo = employees[0] // Diana
 cto = employees[1] // Bruce
 coo = employees[2] // Barry
