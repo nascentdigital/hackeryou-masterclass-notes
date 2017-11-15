@@ -36,7 +36,7 @@ class Tree {
 Let's build it!
 For a simple example, let's build the following DOM (yes, a much smaller, simpler version)
 
-![simple DOM example](images/simple DOM tree.jpg "Simple DOM")
+![simple DOM example](images/tree.jpg "Simple DOM")
 
 ### How does it look like programmatically?
 
@@ -83,7 +83,7 @@ To traverse our tree, our Tree class will need some additional functionality.
 
 ## What does a tree traversal look like?
 
-Here's an example with recursion and callbacks...
+Here's an example with recursion...
 
 ```javascript
   // need to setup the initial state
@@ -93,13 +93,13 @@ Here's an example with recursion and callbacks...
     traverse_recursive(q);
   }
   
-  traverse_recursive(callback) {
+  traverse_recursive(myFunction) {
     // it's empty! we're done
     if q.empty() return;
 
     // perform our callback on our node
     Node n = q.pop();
-    callback(n);
+    myFunction(n);
     
     // continue with our children
     node.children.forEach(child => q.push(child));
