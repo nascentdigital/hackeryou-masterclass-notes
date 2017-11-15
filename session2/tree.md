@@ -77,15 +77,6 @@ Another way to traverse a tree that scales for large data and illustrates what r
       // move to next child in sequence
       node = stack.length === 0 ? null : stack.shift();
     }
-    
-    callback(this.root);
-
-    if (!this.root.children || this.root.children.length < 1) {
-      return;
-    }
-    children.forEach(() => {
-      child.traverse(callback);
-    });
   }
 
 ```
