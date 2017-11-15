@@ -1,3 +1,22 @@
+# Session 2: Data Structures
+
+This session focuses on the purpose and application of data structures in computer science.
+
+## Outline
+
+The agenda for this session will be as follows:
+
+1. [Introduction](Introduction.md):  Cover some common classes of data structures,
+    outlining the general use cases and variations.
+
+2. [Software Design Principles](DesignPrinciples.md):  This is a look at the overall
+    software design principles that should guide the development process.
+
+3. [Under the Hood](LowLevel.md):  This is a foundational look to help understand 
+    compilers and interpreters.  It sets up basic understanding that will help us
+    navigate other topics throughout the upcoming sessions.
+
+
 ## Data Structures
 
 ### List / Array
