@@ -100,6 +100,7 @@ const manager = employees.filter(employee => employee.position === 'Manager')
 - Both are abstract data types, and in Javascript are not actual data types, they can both be implemented though
  
 A stack is LIFO (Last In First Out)
+
 Let's say we needed to keep the history of some changes, like in paint program to draw portraits.
 ```ecmascript 6
 // stack
@@ -137,7 +138,8 @@ paint.undo() // earrings
 ```
 
 A Queue is FIFO (First In First Out)
-Implement program that sells milk, sort of like a vending machine
+
+Implement a program that sells milk, sort of like a vending machine
 ```ecmascript 6
 class MightyMilkMachine() {
     contructor() {
