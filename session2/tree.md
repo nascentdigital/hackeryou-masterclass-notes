@@ -32,23 +32,26 @@ Of all of the wonderful things we want to do with a tree, we first would need a 
 
 // show an image
 
-```javascript
-// TODO: switch it to binary tree, show construction and image
-```
+
 ## What does a tree traversal look like?
 
 Here's an example with recursion and callbacks...
 
 ```javascript
-  traverse(callback) {
-    callback(this.root);
-
-    if (!this.root.children || this.root.children.length < 1) {
-      return;
-    }
-    children.forEach(() => {
-      child.traverse(callback);
-    });
+  traverse(Node node) {
+    Queue q;
+    q.push(root);
+    breadth_first_recursive(q);
+  }
+  
+  traverse_recursive(callback) {
+    if q.empty() return;
+    
+    Node n = q.pop();
+    callback(n);
+    if (n.left) q.push(n.left);
+    if (n.right) q.push(n.right);
+    traverse_recursive(q);
   }
 
 ```
