@@ -46,9 +46,9 @@ employees.splice(2, 0, {
   position: 'Manager'
 })
 
-ceo = employees[0] // Clark
-cto = employees[1] // Diana
-coo = employees[2] // Bruce
+ceo = employees[0] // Diana
+cto = employees[1] // Bruce
+coo = employees[2] // Barry
 ```
 
 When we add items or change the *order* of items, we can no longer expect the values to still be at a given index
