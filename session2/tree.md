@@ -1,6 +1,13 @@
 ## Trees
 
-Let's look at how this data structure can be defined, and then similarly, we'll compare behaviour using our picture album compared to how we saw it behave with the array and linked list.
+What is a tree?
+A hierarchical data structure with a root node, and subtrees of children with a parent property. Let's use the DOM as an example...
+
+![simple DOM example](https://snipcademy.com/code/img/tutorials/javascript/dom.svg "Simple DOM")
+
+I know we are all familiar with what the DOM is... that really cool interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document. 
+
+## Let's take a look at how you would implement it...
 
 ### Let's define our Node and Tree
 ```javascript
@@ -24,14 +31,40 @@ class Tree {
 }
 ```
 
-Of all of the wonderful things we want to do with a tree, we first would need a way to traverse it (visit every node). 
+### How is this used?
 
-```javascript
-// TODO: build a tree
-```
+Let's build it!
+For a simple example, let's build the following DOM (yes, a much smaller, simpler version)
 
 // show an image
 
+### How does it look like programmatically?
+
+Well, using our definitions above, we can create the tree like this:
+
+// Here are all of the nodes that we'll need
+Node div = new Node("<div");
+Node h2 = new Node("<h2>");
+Node ul = new Node("<ul>");
+Node li1 = new Node("<li>");  
+Node li2 = new Node("<li>");  
+Node li3 = new Node("<li>");  
+Node a = new Node("<a>");
+  
+// but they need relationships! Let's take care of that here  
+// our root "div" has 3 children:
+div.children.push(h2);
+div.children.push(ul);
+div.children.push(a);
+
+// our ul child has 3 children of its own
+ul.children.push(li1);
+ul.children.push(li2);
+ul.children.push(li3);
+
+Awesome! We've written our DOM. Now what?
+What's the DOM again? What do we want to do? 
+If we want to edit and manage our DOM, we better now how to traverse it.
 
 ## What does a tree traversal look like?
 
@@ -45,15 +78,17 @@ Here's an example with recursion and callbacks...
   }
   
   traverse_recursive(callback) {
+    // it's empty! we're done
     if q.empty() return;
-    
+
+    // perform our callback on our node
     Node n = q.pop();
     callback(n);
-    if (n.left) q.push(n.left);
-    if (n.right) q.push(n.right);
+    
+    // continue with our children
+    node.children.forEach(child => q.push(child));
     traverse_recursive(q);
   }
-
 ```
 
 A simple example to traverse the entire tree and print to screen all values:
@@ -115,8 +150,6 @@ What is the DOM?
 
 It’s an interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
 It's a great example because you have lots of one-to-many relationships.
-
-![simple DOM example](https://snipcademy.com/code/img/tutorials/javascript/dom.svg "Simple DOM")
 
 Because it is so important to quickly access, read, change your DOM tree, on top of being able to traverse the tree, you are also provided with hash tables (dictionaries) of elements by id, to quickly look up specific elements (or nodes) of your tree by index. Hence, why you can use calls like:
 
