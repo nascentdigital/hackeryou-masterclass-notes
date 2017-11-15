@@ -59,6 +59,37 @@ myTree.traverse((node) => console.log(node.data));
 
 // TODO: salmon, mole, 
 ```
+Another way to traverse a tree that scales for large data and illustrates what recursion does would be to **unwind** the recursive function:
+
+```javascript
+  traverse(callback) {
+  
+    const stack = [];
+    let node = this.root;
+    while (node) {
+    
+      // evaluate current node
+      callback(node);
+
+      // evaluate all children, pushing them to the stack
+      node.childred.forEach(child => stack.push(child));
+      
+      // move to next child in sequence
+      node = stack.length === 0 ? null : stack.shift();
+    }
+    
+    callback(this.root);
+
+    if (!this.root.children || this.root.children.length < 1) {
+      return;
+    }
+    children.forEach(() => {
+      child.traverse(callback);
+    });
+  }
+
+```
+
 
 Your callback can be anything here... a function to return all image type children, a counter function to find the number of images, a function that manipulates certain nodes, etc...
 
