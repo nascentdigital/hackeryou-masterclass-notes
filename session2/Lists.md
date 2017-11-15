@@ -80,6 +80,7 @@ const filter = (list, callback) => {
     }
     return matches
 }
+
 // filter manager from list of employees
 // this can potentially return more than one employee
 const manager = filter(employees, (employee) => employee.position = 'Manager')
