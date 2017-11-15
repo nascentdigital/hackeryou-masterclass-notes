@@ -173,4 +173,5 @@ So when needed, you can also look at combining data structures.
 ### Words with Friends
 
 ![Words with friends](images/words.png "Words with Friends")
+![Words with friends](images/wwf.jpg "Words with Friends")
 
