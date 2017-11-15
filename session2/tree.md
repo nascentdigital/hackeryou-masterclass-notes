@@ -3,7 +3,7 @@
 What is a tree?
 A hierarchical data structure with a root node, and subtrees of children with a parent property. Let's use the DOM as an example...
 
-![simple DOM example](https://snipcademy.com/code/img/tutorials/javascript/dom.svg "Simple DOM")
+![simple DOM example](images/dom.svg "Simple DOM")
 
 I know we are all familiar with what the DOM is... that really cool interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document. 
 
