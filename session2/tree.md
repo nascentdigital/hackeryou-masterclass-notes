@@ -129,14 +129,14 @@ And I would see printed on the screen:
 Another way to traverse a tree that scales for large data and illustrates what recursion does would be to **unwind** the recursive function:
 
 ```javascript
-  traverse(callback) {
+  traverse(myFunction) {
   
     const stack = [];
     let node = this.root;
     while (node) {
     
       // evaluate current node
-      callback(node);
+      myFunction(node);
 
       // evaluate all children, pushing them to the stack
       node.childred.forEach(child => stack.push(child));
