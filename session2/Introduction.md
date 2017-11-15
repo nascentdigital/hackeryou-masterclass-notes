@@ -54,7 +54,6 @@ a few abstract data structures that are core to software development:
         <ul>
             <li>Optimized search algorithms</li>
             <li>Maintaining a hierarchy of information</li>
-            <li></li>
         </ul>
       </td>
     </tr>

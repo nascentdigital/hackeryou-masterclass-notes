@@ -6,8 +6,8 @@ This session focuses on the purpose and application of data structures in comput
 
 The agenda for this session will be as follows:
 
-1. [Introduction](Introduction.md):  Cover some common classes of data structures,
-    outlining the general use cases and variations.
+1. [Introduction](Introduction.md):  Covers the most common types of data structures,
+    outlining their general use cases and variations.
 
 2. [Software Design Principles](DesignPrinciples.md):  This is a look at the overall
     software design principles that should guide the development process.
