@@ -27,13 +27,13 @@ class Tree {
 Of all of the wonderful things we want to do with a tree, we first would need a way to traverse it (visit every node). 
 
 ```javascript
-// build a tree
+// TODO: build a tree
 ```
 
 // show an image
 
 ```javascript
-// switch it to binary tree
+// TODO: switch it to binary tree, show construction and image
 ```
 ## What does a tree traversal look like?
 
@@ -56,6 +56,8 @@ Here's an example with recursion and callbacks...
 A simple example to traverse the entire tree and print to screen all values:
 ```javascript
 myTree.traverse((node) => console.log(node.data));
+
+// TODO: salmon, mole, 
 ```
 
 Your callback can be anything here... a function to return all image type children, a counter function to find the number of images, a function that manipulates certain nodes, etc...
