@@ -1,4 +1,4 @@
-### Array
+### Arrays
 An array is an ordered collection of data (either primitive or object depending upon the language). Arrays are used to store multiple values in a single variable. This is compared to a variable that can store only one value. 
 
 ```ecmascript 6
@@ -95,7 +95,7 @@ const manager = employees.filter(employee => employee.position === 'Manager')
 
 ****
 
-### Stack and Queue
+### Stacks and Queues
 - Stacks and queues are used to organize data into sequential order
 - Both are abstract data types, and in Javascript are not actual data types, they can both be implemented though
  
