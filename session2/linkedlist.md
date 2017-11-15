@@ -1,4 +1,10 @@
-## Two ways of creating your array and adding to your array
+# Linked List
+
+In order to introduce linked lists, we are first going to solve a problem using arrays and go from there...
+
+
+
+## Quick recap: Two ways of creating your array and adding to your array
 
 We are discussing here the data structure, array. Not the JavaScript Array.
 
