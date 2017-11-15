@@ -93,13 +93,13 @@ Here's an example with recursion and callbacks...
     traverse_recursive(q);
   }
   
-  traverse_recursive(callback) {
+  traverse_recursive(myFunction) {
     // it's empty! we're done
     if q.empty() return;
 
     // perform our callback on our node
     Node n = q.pop();
-    callback(n);
+    myFunction(n);
     
     // continue with our children
     node.children.forEach(child => q.push(child));
