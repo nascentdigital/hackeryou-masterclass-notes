@@ -114,7 +114,7 @@ const sortedEmployees = ids.map(id => employees[id])
 ***
 ### Key differences between Lists and Dictionaries and when to use
 - Although they are both used to collect data, the way they are used to access items differ
-  - Array items are accessed based on index, so** order **matters
+  - Array items are accessed based on index, so **order** matters
   - Dictionary items are accessed based on a *unique* key, so they are **unordered**
 - Arrays are better used to list items, whereas Dictionaries are used for lookups
 
