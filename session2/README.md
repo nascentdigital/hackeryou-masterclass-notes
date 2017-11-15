@@ -49,7 +49,7 @@ console.log(coo) // Barry
 
 ```
 
-When we add items or change the*order*of items, we can no longer expect the values to still be at a given index
+When we add items or change the *order* of items, we can no longer expect the values to still be at a given index
 
 #### How do we find an employee/employees then?
 ```ecmascript 6
@@ -217,8 +217,8 @@ const sortedEmployees = ids.map(id => employees[id])
 ***
 ### Key differences between Lists and Dictionaries and when to use
 - Although they are both used to collect data, the way they are used to access items differ
-  - Array items are accessed based on index, so**order**matters
-  - Dictionary items are accessed based on a*unique*key, so they are**unordered**
+  - Array items are accessed based on index, so** order **matters
+  - Dictionary items are accessed based on a *unique* key, so they are **unordered**
 - Arrays are better used to list items, whereas Dictionaries are used for lookups   
 
 Sources:
