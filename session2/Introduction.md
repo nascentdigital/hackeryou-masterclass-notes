@@ -10,7 +10,7 @@ Just like a builder will use a hammer to solve some problems, or a screwdriver
 to solve others, a programmer must choose the correct data structure for
 the job too.
 
-![Right tool for the job!](images/right_tool.png "Right tool for the job!")
+![Right tool for the job!](images/right_tool.jpg "Right tool for the job!")
 
 
 While they may have various names depending on the programming language, there are 
