@@ -36,7 +36,7 @@ class Tree {
 Let's build it!
 For a simple example, let's build the following DOM (yes, a much smaller, simpler version)
 
-![simple DOM example]("images/simple DOM tree.jpg" "Simple DOM")
+![simple DOM example](images/simple DOM tree.jpg "Simple DOM")
 
 ### How does it look like programmatically?
 
