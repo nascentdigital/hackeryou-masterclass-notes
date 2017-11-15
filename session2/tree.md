@@ -3,7 +3,7 @@
 What is a tree?
 A hierarchical data structure with a root node, and subtrees of children with a parent property. Let's use the DOM as an example...
 
-![simple DOM example](images/dom.svg "Simple DOM")
+![DOM simplified](images/dom.svg "Simple DOM")
 
 I know we are all familiar with what the DOM is... that really cool interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document. 
 
@@ -36,7 +36,8 @@ class Tree {
 Let's build it!
 For a simple example, let's build the following DOM (yes, a much smaller, simpler version)
 
-// show an image
+![simple DOM example]('images/simple DOM tree.jpg' "Simple DOM")
+
 
 ### How does it look like programmatically?
 
