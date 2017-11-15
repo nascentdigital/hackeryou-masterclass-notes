@@ -103,6 +103,8 @@ Here's an example with recursion...
     
     // continue with our children
     node.children.forEach(child => q.push(child));
+    
+    // here we are adding yet another frame to our call stack... hope it doesn't get to big :fingercrossed
     traverse_recursive(q);
   }
 ```
