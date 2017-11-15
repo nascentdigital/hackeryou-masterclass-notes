@@ -26,6 +26,15 @@ class Tree {
 
 Of all of the wonderful things we want to do with a tree, we first would need a way to traverse it (visit every node). 
 
+```javascript
+// build a tree
+```
+
+// show an image
+
+```javascript
+// switch it to binary tree
+```
 ## What does a tree traversal look like?
 
 Here's an example with recursion and callbacks...
