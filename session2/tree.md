@@ -141,7 +141,7 @@ Another way to traverse a tree that scales for large data and illustrates what r
       myFunction(node);
 
       // evaluate all children, pushing them to the stack
-      node.childred.forEach(child => stack.push(child));
+      node.children.forEach(child => stack.push(child));
       
       // move to next child in sequence
       node = stack.length === 0 ? null : stack.shift();
@@ -151,7 +151,7 @@ Another way to traverse a tree that scales for large data and illustrates what r
 ```
 
 
-Your callback can be anything here... a function to return all image type children, a counter function to find the number of images, a function that manipulates certain nodes, etc...
+Your function to perform can be anything here... a function to return all image type children, a counter function to find the number of images, a function that manipulates certain nodes, etc...
 
 ### Final thoughts on the DOM
 
