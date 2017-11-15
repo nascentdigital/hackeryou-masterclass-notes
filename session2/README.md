@@ -84,8 +84,8 @@ const managers = employees.filter(employee => employee.position === 'Manager')
 
 ### Stack and Queue
 - Stacks and queues are used to organize data into sequential order
-- A stack is FIFO (First In First Out)
-- A Queue is LIFO (Last In First Out)
+- A stack is LIFO (Last In First Out)
+- A Queue is FIFO (First In First Out)
 - Both are abstract data types, and in Javascript are not actual data types, they can both be implemented though
 
 ```ecmascript 6
