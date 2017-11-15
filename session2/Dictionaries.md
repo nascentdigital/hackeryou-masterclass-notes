@@ -71,21 +71,21 @@ The key of an `Object` must be a string (or `Symbol`), whereas a `Map` can have 
 Going back to our previous example, our company is growing and we're adding new employees:
 ```ecmascript 6
 const ceo = {
-    id: '2',
-    name: 'Clark',
-    position: 'CEO'
-  }
+  id: '2',
+  name: 'Clark',
+  position: 'CEO'
+}
 const cto = {
-    id: '1',
-    name: 'Diana',
-    position: 'CTO'
-  }
+  id: '1',
+  name: 'Diana',
+  position: 'CTO'
+}
  const coo = {
-    id: '3',
-    name: 'Bruce',
-    position: 'COO'
-  }
-]
+  id: '3',
+  name: 'Bruce',
+  position: 'COO'
+}
+
 let employees = [
   ceo,
   cto,
@@ -101,6 +101,8 @@ employees.push(manager)
 // someone accidentally adds an employee twice
 employees.push(manager)
 ```
+
+![We're not hiring Storm troopers](images/storm-troopers.png "We're not hiring Storm troopers")
 
 Seems like an array isn't the right tool for the right job...
 
