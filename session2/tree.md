@@ -113,7 +113,7 @@ myTree.traverse((node) => console.log(node.data));
 ```
 
 This is how it is iterating through:
-
+![Traversing our tree](images/iterations.jpg "Traversing our simple DOM")
 
 And I would see printed on the screen:
 ```javascript
