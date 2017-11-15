@@ -83,7 +83,7 @@ To traverse our tree, our Tree class will need some additional functionality.
 
 ## What does a tree traversal look like?
 
-Here's an example with recursion and callbacks...
+Here's an example with recursion...
 
 ```javascript
   // need to setup the initial state
