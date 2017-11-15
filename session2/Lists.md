@@ -1,20 +1,18 @@
 ### Array
 An array is an ordered collection of data (either primitive or object depending upon the language). Arrays are used to store multiple values in a single variable. This is compared to a variable that can store only one value. 
 
-
 ```ecmascript 6
-let employees = [
-  {
+const ceo = {
     id: '2',
     name: 'Clark',
     position: 'CEO'
-  }, 
-  {
+  }
+const cto = {
     id: '1',
     name: 'Diana',
     position: 'CTO'
-  }, 
-  {
+  }
+ const coo = {
     id: '3',
     name: 'Bruce',
     position: 'COO'
@@ -22,12 +20,20 @@ let employees = [
 ]
 ```
 
+```ecmascript 6
+let employees = [
+  ceo,
+  cto,
+  coo
+]
+```
+
 Each item in an array has a number attached to it, called a numeric index, that allows you to access it. In JavaScript, arrays start at index zero and can be manipulated with various methods. 
 
 ```ecmascript 6
-const ceo = employees[0] // Clark
-const cto = employees[1] // Diana
-const coo = employees[2] // Bruce
+let ceo = employees[0] // Clark
+let cto = employees[1] // Diana
+let coo = employees[2] // Bruce
 ```
 This works, but what type of problems can occur?
 
@@ -40,11 +46,9 @@ employees.splice(2, 0, {
   position: 'Manager'
 })
 
-
-console.log(ceo) // Diana
-console.log(cto) // Bruce
-console.log(coo) // Barry
-
+ceo = employees[0] // Clark
+cto = employees[1] // Diana
+coo = employees[2] // Bruce
 ```
 
 When we add items or change the *order* of items, we can no longer expect the values to still be at a given index
