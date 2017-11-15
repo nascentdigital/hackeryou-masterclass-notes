@@ -97,7 +97,7 @@ Here's an example with recursion...
     // it's empty! we're done
     if q.empty() return;
 
-    // perform our callback on our node
+    // perform our myFunction on our node
     Node n = q.pop();
     myFunction(n);
     
