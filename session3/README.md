@@ -10,7 +10,14 @@ The agenda for this session will be as follows:
 
 2. [Introduction](Introduction.md): We introduce several key concepts via a discussion of sorting. This includes algorithms, performance, scale, and complexity.
 
-3. [](Dictionaries.md):  Describes the different types of dictionaries and compare them with links.
+3. [Contacts List](ContactsList.md):  Describes the different types of dictionaries and compare them with links.
     
-4. [Trees](Trees.md): Covers a simple implementation of a tree with an overview on traversing.
+4. [Searching](Searching.md): Covers a simple implementation of a tree with an overview on traversing.
 
+5. [Sorting](Sorting.md):
+
+6. [Libraries](Libraries.md):
+
+7. [Space & Time](SpaceTime.md):
+
+8. [Resources](Resources.md):
