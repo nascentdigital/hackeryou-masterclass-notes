@@ -13,5 +13,5 @@ The agenda for this session will be as follows:
 
 3. [Dictionaries](Dictionaries.md):  Describes the different types of dictionaries and compare them with links.
     
-4. [Trees](Trees.md): 
+4. [Trees](Trees.md): Covers a simple implementation of a tree with an overview on traversing.
 
