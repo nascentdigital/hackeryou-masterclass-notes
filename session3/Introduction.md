@@ -8,7 +8,9 @@ In order to talk about performance and optimization, let's first discuss some co
 
 Certain items, by their nature, lend themselves to being sorted. Other items have a less obvious sorting strategy.
 
-#### For instance, Numbers? People? Sandwiches? T-Shirts? Think about how you would approach sorting each of these collections.
+#### For instance, Numbers? People? Sandwiches? T-Shirts?
+
+Think about how you would approach sorting each of these collections.
 
 ![Unsorted T-Shirts](images/t-shirts-unsorted.jpg "Unsorted T-Shirts")
 

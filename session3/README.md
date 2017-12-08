@@ -6,9 +6,9 @@ This session focuses on algorithm complexity and performance in computer science
 
 The agenda for this session will be as follows:
 
-1. [Optimization](Optimization.md): This initial discussion will cover the concept of optimization, considerations before optimizing, and how to effectively optimize.
+1. [Introduction](Introduction.md): We introduce several key concepts via a discussion of sorting. This includes algorithms, performance, scale, and complexity.
 
-2. [Introduction](Introduction.md): We introduce several key concepts via a discussion of sorting. This includes algorithms, performance, scale, and complexity.
+2. [Optimization](Optimization.md): This initial discussion will cover the concept of optimization, considerations before optimizing, and how to effectively optimize.
 
 3. [Contacts List](ContactsList.md):  Describes the different types of dictionaries and compare them with links.
     
