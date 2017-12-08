@@ -7,24 +7,28 @@ There are numerous sorting algorithms that, over time, have become part of the c
 Building on the discussion of Complexity from the previous chapter, we will look at several of the more popular algorithms and their performace given a collection of 'n' items.
 
 #### Selection Sort
-Average Case: n²
+Average Case: n² <br/>
 Worst Case: n²
 
 #### Insertion Sort
-Average Case: n²
+Average Case: n² <br/>
 Worst Case: n²
+
 
 #### Bubble Sort
-Average Case: n²
+Average Case: n² <br/>
 Worst Case: n²
+
 
 #### Quick Sort
-Average Case: n*log(n)
+Average Case: n*log(n) <br/>
 Worst Case: n²
 
+
 #### Merge Sort
-Average Case: n*log(n)
+Average Case: n*log(n) <br/>
 Worst Case: n*log(n)
+
 
 There are countless resources available for more information on each of these sorting algorithms. For instance, [Wikipedia](https://en.wikipedia.org/wiki/Sorting_algorithm) is a good starting point.
 
