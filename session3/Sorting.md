@@ -38,9 +38,8 @@ There are countless resources available for more information on each of these so
 Are there scenarios when sorting doesn't make sense? Or isn't worth the cost/time?
 
 <img alt="Ticketmaster" src="images/ticketmaster.jpg" width="300" />
-![Ticketmaster](images/ticketmaster.jpg "Ticketmaster" | width=300)
 
-![Kickstarter](images/kickstarter.png "Kickstarter" | width=300)
+<img alt="Kickstarter" src="images/kickstarter.png" width="300" />
 
 
 ### When do we need to sort?
