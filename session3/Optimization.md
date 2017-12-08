@@ -12,3 +12,9 @@ Until you see the pieces come together, you’re not sure of what you are optimi
 
 #### Rule 3:  Profile First
 Use your tools to see what you are actually optimizing.
+
+### It's all relative...
+![Mountain or Molehill](images/mountain-molehill.png "Mountain or Molehill")
+
+## Read the "good book"
+![The Pragmatic Programmer](images/pragmatic-programmer.png "The Pragmatic Programmer")
