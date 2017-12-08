@@ -18,6 +18,6 @@ The agenda for this session will be as follows:
 
 6. [Libraries](Libraries.md):
 
-7. [Space & Time](SpaceTime.md):
+7. [Space & Time](SpaceTime.md): In computer science, when we say 'Space and Time' what we really mean is 'Memory' and 'Running Time'.
 
 8. [Resources](Resources.md): Additional resources that may be helpful.
