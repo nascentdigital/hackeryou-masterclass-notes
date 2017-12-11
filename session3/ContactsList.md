@@ -1,5 +1,7 @@
 
 # Building a ContactsList
+
+
 ## Cost of operations
 
 Network calls are expensive
@@ -42,4 +44,5 @@ let contacts : [{
 	}]
 
 ```
-
+Given the array above we can create a list that can look like:
+![Unsorted Contacts List](images/unsorted.png "Unsorted Contacts List")
