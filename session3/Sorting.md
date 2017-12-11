@@ -32,6 +32,8 @@ Worst Case: n*log(n)
 
 There are countless resources available for more information on each of these sorting algorithms. For instance, [Wikipedia](https://en.wikipedia.org/wiki/Sorting_algorithm) is a good starting point.
 
+Here is a good animation tool for quick visual comparison of the performance of difference sorting algorithms (https://www.toptal.com/developers/sorting-algorithms) 
+
 
 ### Why sort at all?
 
