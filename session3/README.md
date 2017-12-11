@@ -12,7 +12,7 @@ The agenda for this session will be as follows:
 
 3. [Contacts List](ContactsList.md): We will use the example of building out a Contacts List (similiar to Facebook Messenger) to discuss what will need to be considered when optimizing for performance.
     
-4. [Searching](Searching.md): Discussing Linear Search to help us understand algorithms and how to approach time complexities of algorithms
+4. [Complexity](Complexity.md): Discussing Linear Search to help us understand algorithms and how to approach time complexities of algorithms
 
 5. [Sorting](Sorting.md): Building on the previous chapter, we discuss sorting algorithms and some considerations when attempting to keep a collection ordered.
 
