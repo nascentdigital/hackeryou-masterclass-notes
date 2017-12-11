@@ -10,7 +10,7 @@ The agenda for this session will be as follows:
 
 2. [Optimization](Optimization.md): This initial discussion will cover the concept of optimization, considerations before optimizing, and how to effectively optimize.
 
-3. [Contacts List](ContactsList.md):
+3. [Contacts List](ContactsList.md): We will use the example of building out a Contacts List (similiar to Facebook Messenger) to discuss what will need to be considered when optimizing for performance.
     
 4. [Searching](Searching.md):
 
