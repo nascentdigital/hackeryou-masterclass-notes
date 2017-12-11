@@ -22,3 +22,4 @@ _.findKey(object, [predicate=_.identity])
 _.merge(object, [sources])
 _.mergeWith(object, sources, customizer)
 ```
+[LoDash docs](https://lodash.com/docs/)
