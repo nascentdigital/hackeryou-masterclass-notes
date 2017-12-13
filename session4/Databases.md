@@ -156,19 +156,74 @@ We can also create a compound index that allows us to query across multiple fiel
 
 ```js
 db.restaurants.createIndex({ name: 1, cuisine: 1, borough: 1 })
+
+db.getCollection('restaurants')
+    .find({ cuisine: 'Italian'}, { _id: 0, name: 1})
+    .sort({ name: 1})
 ```
 
 ##### Considerations
-- It's pointless if you can't fit it in RAM
-- Use them to sort
+- Make sure you can fit your indexes in RAM
+    - Indexes will be loaded into memory if possible
+    - Data will sit on disk in [BSON](https://www.mongodb.com/json-and-bson) format
+    - If you indexes don't fit in memory the OS will have to fallback to swapping (REALLY SLOW!)
+- Use them to speed up sorting
+    - Otherwise the OS needs to sort afterwards
 - Use compound indexes to create *covered queries* to make things faster
-    - `indexOnly = true`
+    - If all the data you project is indexed it doesn't need to reach into the BSON
 - Debug using `explain()`
+
+<br/>
+
 
 ### Transactions
 
-- Use `findAndModify()` with supporting commands to support transactions
+In a traditional database you would normally make an update as follows:
+
+1. Query to fetch the record frmo the database
+2. Update the record in your code
+3. Write the updated record back to the database
+
+This can open up a concurrency problem.  What happens if two people start to update the
+same record at the same time:
+
+```js
+[REQUEST 1] Reads data
+                            Reads data   [REQUEST 2]
+[REQUEST 1] Updates data
+                            Updates data [REQUEST 2]
+                            Writes data  [REQUEST 2]
+[REQUEST 1] Writes data
+```
+
+In MongoDB you should never do that.  Use `findAndModify()` with supporting commands to 
+support transactions.  
+
+###### Incrementing within a transaction
+```js
+db.getCollection('restaurants')
+    .findAndModify({
+        query: { _id: ObjectId("5a319ad32266627b210a4e16") },
+        update: { $inc: { reviews: 1 } },
+        new: true
+    })
+```
+
+There are also situations where data needs to be removed on demand.  In these cases a
+`remove(query)` is one option, but sometimes the condition is time-based.  
+
+##### Use TTL for Transactional Pruning
+```js
+db.getCollection('restaurants')
+    .createIndex( { "createdAt": 1 }, { expireAfterSeconds: 5 } )
+    
+db.getCollection('restaurants')
+    .insert({ name: 'test', createdAt: new Date() })
+```
 - Use TTL to handle time-sensitive data
+
+<br/>
+
 
 ### Tweaking
 
