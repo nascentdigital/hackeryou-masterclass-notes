@@ -1,13 +1,13 @@
 # Service Design
 
-### Scalability in practice
+## Scalability in practice
 
 
-#### Volume
+### Volume
 
 In the context of a server, volume refers to number of requests (per minute/per second) or I/O.
 
-Due to the Node.js being single-threaded and non-blocking,
+Due to Node.js being single-threaded and non-blocking,
 it is built to handle high request volume provided the
 process is not performing CPU intensive work.
 
@@ -15,10 +15,9 @@ The server will continue to handle more and more incoming requests
 until the process runs out of memory or the CPU hits 100% usage and the
 app will crash.
 
-#### Size
+### Size
 
-Scalability with respect to size refers to the magnitude of work
-involved in carrying out some operation.
+The magnitude of work involved in carrying out some operation.
 These operations can either be **blocking** or **non-blocking** - consider a fast food restaurant.
 
 These types of tasks will cause a spike in CPU usage and block the
@@ -29,13 +28,13 @@ For a single-threaded process like a Node.js application this is **bad**.
 The server will essentially lock up and not handle any incoming requests
 while carrying out the operation.
 
-##### Strategies
+### Strategies
 
 Your backend can use many different strategies to **scale up** the
 maximum concurrent users that can be handled or the amount of work
 the server can handle.
 
-###### Vertical scaling
+#### Vertical scaling
 
 Boost RAM and CPU on a single server to increase capacity
 
@@ -45,7 +44,7 @@ Involves the least amount of work however the cost greatly increases
 as demands increase. Eventually you will still hit a limit.
 
 
-###### Horizontal scaling
+#### Horizontal scaling
 
 Load Balance across multiple servers running instances of the same application
 
@@ -57,7 +56,7 @@ Basic implementation of load-balancing
 
 ![Load balancing](images/load-balancing.png)
 
-Load balancing allows **horizontal scaling** of web servers.
+Load balancing allows nearly infinite **horizontal scaling** of web servers.
 In order to be able to horizontally scale, these instances of the same
 server must be **stateless**.
 
@@ -69,7 +68,7 @@ How can state be shared across multiple server instances?
 - Single database instance used by all servers
 
 
-###### Splitting or Distributing
+#### Splitting or Distributing
 
 Split discrete pieces of functionality across multiple servers.
 
@@ -85,7 +84,7 @@ Each microservice can individually be vertically or horizontally scaled
 based on it's demand - this gives more control and can possibly reduce
 costs.
 
-###### Offloading
+#### Offloading
 
 Use message queue
 
@@ -93,14 +92,16 @@ When a server is required to carry out long running (possibly blocking)
 units of work a message queue can be useful.
 Instead of a classic request - response interaction, a server can take a
 request the sends a message to a message queue.
-The sole responsibility of another service can be to just keep pulling
-messages off the queue and do the work to process them before moving
+
+Another service then has the sole responsibility of pulling
+messages off the queue and doing the work to process them before moving
 on to the next message in the queue.
+
 These worker services can then be scaled up dynamically based on the
 length of the queue to account for increased demand.
 
 
-###### Multithreading
+#### Multithreading
 
 When dealing with size scalability issues, sometimes the simplest
 solution is to start a new process on the same server to execute some
@@ -166,26 +167,33 @@ server.on('request', (req, res) => {
 server.listen(3000);
 ```
 
-### Pre-rendering
+## Pre-rendering
 
-#### Client vs Server side rendering
+### Server vs Client side rendering
 
-###### Client
+#### Server
+- Server builds html page using some templating engine (PHP, Rails)
+- Page navigation requires request to server to fetch new html for browser
+to render
+- Increased load on server to fetch data and build html pages
+
+
+#### Client
 - Offload building html layouts to javascript running in the browser (angular.js, react.js)
 - Allows for Single page application UX
 - Can be compressed and served as a single js file to run your client side application
 - Data comes from a separate API server
 - SEO implications
 
-###### Server
-- Server builds html using some templating engine (PHP, Rails)
-- Page navigation requires request to server to fetch new html for browser
-to render
-- Increased load on server to fetch data and build html pages
 
-
-###### Prerendering Client
+#### Prerendering Client
 - Pre-render React code server side and serve partially rendered react app
 that functions as a fully client side application
 - If done correctly, eliminates SEO issues
 - Can speed up initial perceived load times
+
+Magic lies with `ReactDOMServer.renderToString(element)` on the server side
+and `ReactDOM.hydrate(element, container[, callback])` on the client side.
+
+More info on [server side pre-rendering in React](https://reactjs.org/docs/react-dom-server.html#rendertostring)
+and how the [client side application takes over in the browser](https://reactjs.org/docs/react-dom.html#hydrate).
