@@ -3,7 +3,7 @@
 ### Maintainability
 The ease with which a component can be maintained and repaired.
 
-![Maintainability](images/maintainability.jpg "This is not maintainable.")
+![Maintainability](images/maintainability.png "This is not maintainable.")
 
 <br/>
 
