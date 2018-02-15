@@ -14,11 +14,13 @@ Pros:
 
 Cons:
 - There is quite a bit of setup before you can use it
+- - Schemas are rigid. Databases, tables, columns, and relationships need to be created before you can begin to use it.
 - Changes to structure often require data migration (not simple)
 
 ### Schemaless (MongoDB, CouchDB, DynamoDB, Cassandra)
 Pros:
 - You can jump in immediately and start using them without any setup
+- - Can begin with an empty instance and create the schema on the fly as needed in code
 - You can change the data as you application and deal with migration later
 - You can usually create complex data structures (Document Store vs Wide Column)
 - The query languages tend to be much more powerful
