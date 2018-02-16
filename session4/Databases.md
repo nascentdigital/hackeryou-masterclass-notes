@@ -294,9 +294,9 @@ Implementation of transactions by creating and storing the transaction as a desc
 1. Store the action in a transactions collection.
 2. Fetch any transactions from the transactions collection.
 3. Set the transaction state to pending.
-4. Apply the action if the document does not already had the action id in its pending transactions list.
-5. Update the transaction state to applied.
-6. Update both destinations to remove their pending transactions.
+4. Apply the action in an idempotent manner to the target documents.
+5. When all actions are completed set the transaction state to applied.
+6. Remove any idempotent state identifiers from the target documents.
 7. Set the transaction state to done.
 
 Quick note, mongoDB 4.0 will include true ACID transactions *YAY!*
