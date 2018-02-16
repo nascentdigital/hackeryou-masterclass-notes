@@ -13,4 +13,4 @@ Github repo [Sorting Algorithms in Javascript](https://github.com/benoitvallon/c
 ![The Pragmatic Programmer](images/pragmatic-programmer.png "The Pragmatic Programmer")
 
 ## Be a "clean" coder
-![The Clean Coder](images/the-clean-coder.png "The Clean Coder")
+![The Clean Coder](images/the-clean-coder.jpg "The Clean Coder")
