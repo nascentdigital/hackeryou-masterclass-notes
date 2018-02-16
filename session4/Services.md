@@ -18,7 +18,7 @@ app will crash.
 ### Size
 
 The magnitude of work involved in carrying out some operation.
-These operations can either be **blocking** or **non-blocking** - consider a fast food restaurant.
+These operations can either be **blocking** or **non-blocking**.
 
 These types of tasks will cause a spike in CPU usage and block the
 current thread until completion.
@@ -40,8 +40,15 @@ Boost RAM and CPU on a single server to increase capacity
 
 ![EC2 pricing](images/ec2-pricing.png)
 
-Involves the least amount of work however the cost greatly increases
-as demands increase. Eventually you will still hit a limit.
+For reference:
+vCPU: virtual CPU
+ECU: unit of measure for CPU power
+GiB: (Gibibyte) for data processing and transmission
+GB: (Gigabyte) for disk drive capacity
+EBS: (Elastic Block Store) for data storage
+
+This involves the least amount of work however the cost greatly increases
+as demands increase. Eventually however, you will still hit a limit.
 
 
 #### Horizontal scaling
