@@ -196,7 +196,7 @@ to render
 
 #### Prerendering Client
 - Pre-render React code server side and serve partially rendered react app
-that functions as a fully client side application
+that functions as a fully client-side application
 - If done correctly, eliminates SEO issues
 - Can speed up initial perceived load times
 
