@@ -83,7 +83,7 @@ Microservice architecture
 
 ![Microservice architecture](images/microservices-architecture.png)
 
-Client can go directly to different microservices or a single exposed
+Clients can go directly to different microservices or a single exposed
 API that calls other microservices. Microservices can interact with
 each other and other shared resources (DBs, cache, CDN etc).
 
