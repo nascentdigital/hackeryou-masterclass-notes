@@ -114,6 +114,7 @@ When dealing with size scalability issues, sometimes the simplest
 solution is to start a new process on the same server to execute some
 longer running **blocking** task.
 
+**Blocking example:**
 ```javascript
 const http = require('http');
 const longComputation = () => {
@@ -135,7 +136,7 @@ server.on('request', (req, res) => {
 
 server.listen(3000);
 ```
-
+**Non blocking example** where the longComputation is executed in a separate process so as not to block:
 In a new file called `compute.js`:
 ```javascript
 const longComputation = () => {
