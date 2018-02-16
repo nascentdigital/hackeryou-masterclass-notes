@@ -136,7 +136,7 @@ server.on('request', (req, res) => {
 
 server.listen(3000);
 ```
-**Non blocking example** where the longComputation is executed in a separate process so as not to block:
+**Non-blocking example** where the longComputation is executed in a separate process so as not to block:
 In a new file called `compute.js`:
 ```javascript
 const longComputation = () => {
