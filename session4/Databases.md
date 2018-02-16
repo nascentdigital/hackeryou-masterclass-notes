@@ -177,14 +177,20 @@ db.getCollection('restaurants')
 
 <br/>
 
+### Idempotency
 
-### Transactions
+Idempotent operations have the same outcome whether you do them once or multiple times.
 
-In a traditional database you would normally make an update as follows:
+In a database you would normally make an update as follows:
 
-1. Query to fetch the record frmo the database
+1. Query to fetch the record from the database
 2. Update the record in your code
 3. Write the updated record back to the database
+
+Or you could blindly increment values
+
+1. User completes a chapter
+2. Increment completion counter by 1
 
 This can open up a concurrency problem.  What happens if two people start to update the
 same record at the same time:
@@ -198,23 +204,65 @@ same record at the same time:
 [REQUEST 1] Writes data
 ```
 
-In MongoDB you should never do that.  Use `findAndModify()` with supporting commands to 
-support transactions.  
+There can also be network connectivity errors.  If you receive an error can you be sure that your value wasn't saved?
 
-###### Incrementing within a transaction
+You need to be able to identify the state of the data you are changing in order to ensure that you are modifing only the state of the value you initially meant to.
+
+For time series data, store an `updated at` value with the data and only update where the last update is before our new call.
+
+###### Updating timeseries data
+```js
+db.getCollection('stoplights')
+    .findAndModify({
+        query: { _id: ObjectId("5a319ad32266627b210a4e16"), 
+            "updatedAt": changedTimestamp },
+        update: { $set: { colour: "green" } }
+    })
+```
+
+For incrementation a unique context token needs to be created, tieing the update to a state.
+
+###### Incrementing without a transaction
 ```js
 db.getCollection('restaurants')
     .findAndModify({
         query: { _id: ObjectId("5a319ad32266627b210a4e16") },
-        update: { $inc: { reviews: 1 } },
-        new: true
+        update: { $inc: { reviews: 1 } }
+    })
+// or having read the review count from a previous call
+db.getCollection('restaurants')
+    .findAndModify({
+        query: { _id: ObjectId("5a319ad32266627b210a4e16") },
+        update: { $set: { reviews: reviewCount + 1 } }
+    })
+```
+If the call has an error and you retry, you can't be sure the final review count will be increased by 1 or 2 or blowing away the changes of another reviewer
+
+###### Incrementing with a state identifier
+```js
+let oid = ObjectId()
+db.getCollection('restaurants')
+    .findAndModify({
+        query: { _id: ObjectId("5a319ad32266627b210a4e16") },
+        update: { $addToSet: { 'pendingReviews': oid } }, }
+    })
+db.getCollection('restaurants')
+    .findAndModify({
+        query: { _id: ObjectId("5a319ad32266627b210a4e16"),
+            "pendingReviews": oid },
+        update: { 
+            $pull: { 'pendingReviews': oid }
+            $inc: { reviews: 1 } }
     })
 ```
 
 There are also situations where data needs to be removed on demand.  In these cases a
 `remove(query)` is one option, but sometimes the condition is time-based.  
 
-##### Use TTL for Transactional Pruning
+#### Use TTL for Pruning
+
+Use TTL to handle time-sensitive data or data that has a natural usefulness expiry.
+
 ```js
 db.getCollection('restaurants')
     .createIndex( { "createdAt": 1 }, { expireAfterSeconds: 5 } )
@@ -223,6 +271,35 @@ db.getCollection('restaurants')
     .insert({ name: 'test', createdAt: new Date() })
 ```
 - Use TTL to handle time-sensitive data
+
+### Transactions 
+
+Transactions are used in cases where a sequence of write operations must operate as if in a single action.
+
+Example: Buying a widget
+1. Read the value of a widget from the inventory
+2. Update a Customers Balance to remove a value
+3. Add the value to a Seller's Balance
+4. Remove a widget from inventory
+
+If any step fails, the whole action should fail and any changes made need to be undone.
+
+Relational Databases are ACID(Atomicity, Consistency, Isolation, Durability) and have native implementations for transactions.  The A and C is the part that handles Transactions.
+
+Schemaless Databases lack multi document Atomicity and need to be handled by the developer.
+
+#### Two Phase Commits
+Implementation of transactions by creating and storing the transaction as a descriptive object in a transactions collection.  Any document that will have a transaction applied to it will keep a list of the transaction ids.  During this multi-step processes the database will represent pending data.
+
+1. Store the action in a transactions collection.
+2. Fetch any transactions from the transactions collection.
+3. Set the transaction state to pending.
+4. Apply the action if the document does not already had the action id in its pending transactions list.
+5. Update the transaction state to applied.
+6. Update both destinations to remove their pending transactions.
+7. Set the transaction state to done.
+
+Quick note, mongoDB 4.0 will include true ACID transactions *YAY!*
 
 <br/>
 
