@@ -41,11 +41,11 @@ Boost RAM and CPU on a single server to increase capacity
 ![EC2 pricing](images/ec2-pricing.png)
 
 For reference:
-vCPU: virtual CPU
-ECU: unit of measure for CPU power
-GiB: (Gibibyte) for data processing and transmission
-GB: (Gigabyte) for disk drive capacity
-EBS: (Elastic Block Store) for data storage
+* vCPU: virtual CPU
+* ECU: unit of measure for CPU power
+* GiB: (Gibibyte) for data processing and transmission
+* GB: (Gigabyte) for disk drive capacity
+* EBS: (Elastic Block Store) for data storage
 
 This involves the least amount of work however the cost greatly increases
 as demands increase. Eventually however, you will still hit a limit.
