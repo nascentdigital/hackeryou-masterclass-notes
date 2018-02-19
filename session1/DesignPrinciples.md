@@ -7,7 +7,7 @@ functionality within our application. Each layer has a role and responsibility. 
 layered architecture approach, there are common design principles that should be considered.
 
 
-![Cart Architecture](images/cart-architecture "Example architecture of a shopping cart")
+![Cart Architecture](images/cart-architecture.png)
 
 Let's look at the example of an online shopping cart feature. Consider how we breakdown the
 functionality into different layers, how each layer will communicate with each other, and
