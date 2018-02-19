@@ -1,4 +1,4 @@
-## Software Design Principles
+# Software Design Principles
 
 ![Layered Architecture](images/layered-architecture "Separation of concerns into different layers")
 
@@ -7,7 +7,16 @@ functionality within our application. Each layer has a role and responsibility. 
 layered architecture approach, there are common design principles that should be considered.
 
 
-### Separation of Concerns
+![Cart Architecture](images/cart-architecture "Example architecture of a shopping cart")
+
+Let's look at the example of an online shopping cart feature. Consider how we breakdown the
+functionality into different layers, how each layer will communicate with each other, and
+what that could mean for the overall architecture of our application. (ex. Where should the
+different databases live? What happens if we need to add authentication? How do we handle
+security and validation? How do we handle errors?)
+
+
+## Separation of Concerns
 
 Logical separation between pieces or "layers" of an application.
 ```jsx harmony
@@ -126,7 +135,7 @@ const sortAndReverse = string => reverse(sort(string));
 ```
 
 
-### DRY
+## DRY
 
 Don't repeat yourself!
 
