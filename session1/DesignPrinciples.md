@@ -1,6 +1,6 @@
 # Software Design Principles
 
-![Layered Architecture](images/layered-architecture "Separation of concerns into different layers")
+![Layered Architecture](images/layered-architecture.png)
 
 Layered architecture is a design pattern that we can use to visualize how we would organize
 functionality within our application. Each layer has a role and responsibility. When using a

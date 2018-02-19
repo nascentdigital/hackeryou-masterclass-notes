@@ -18,7 +18,7 @@ app will crash.
 ### Size
 
 The magnitude of work involved in carrying out some operation.
-These operations can either be **blocking** or **non-blocking** - consider a fast food restaurant.
+These operations can either be **blocking** or **non-blocking**.
 
 These types of tasks will cause a spike in CPU usage and block the
 current thread until completion.
@@ -40,8 +40,15 @@ Boost RAM and CPU on a single server to increase capacity
 
 ![EC2 pricing](images/ec2-pricing.png)
 
-Involves the least amount of work however the cost greatly increases
-as demands increase. Eventually you will still hit a limit.
+For reference:
+* vCPU: virtual CPU
+* ECU: unit of measure for CPU power
+* GiB: (Gibibyte) for data processing and transmission
+* GB: (Gigabyte) for disk drive capacity
+* EBS: (Elastic Block Store) for data storage
+
+This involves the least amount of work however the cost greatly increases
+as demands increase. Eventually however, you will still hit a limit.
 
 
 #### Horizontal scaling
@@ -76,7 +83,7 @@ Microservice architecture
 
 ![Microservice architecture](images/microservices-architecture.png)
 
-Client can go directly to different microservices or a single exposed
+Clients can go directly to different microservices or a single exposed
 API that calls other microservices. Microservices can interact with
 each other and other shared resources (DBs, cache, CDN etc).
 
@@ -107,6 +114,7 @@ When dealing with size scalability issues, sometimes the simplest
 solution is to start a new process on the same server to execute some
 longer running **blocking** task.
 
+**Blocking example:**
 ```javascript
 const http = require('http');
 const longComputation = () => {
@@ -128,7 +136,7 @@ server.on('request', (req, res) => {
 
 server.listen(3000);
 ```
-
+**Non-blocking example** where the longComputation is executed in a separate process so as not to block:
 In a new file called `compute.js`:
 ```javascript
 const longComputation = () => {
@@ -188,7 +196,7 @@ to render
 
 #### Prerendering Client
 - Pre-render React code server side and serve partially rendered react app
-that functions as a fully client side application
+that functions as a fully client-side application
 - If done correctly, eliminates SEO issues
 - Can speed up initial perceived load times
 
