@@ -60,11 +60,13 @@ behavior, system design, and user experience.
 
 Before diving into the build of your project, it is important to consider the different
 quality attributes and which are important for the use case of your project. You'll likely
-need to make tradeoffs between different attributes depending on the objective of
+need to make trade offs between different attributes depending on the objective of
 your application.
 
 Are you building a marketing site or something that deals with 'sales'?
-- Consider: Performance, searchability, security, availablility, scalability
+- Consider: Performance, searchability, security, availability, scalability
 
 Are you building something that involves multiples users or maintainers?
 - Consider: manageability, reliability, usability, supportability
+
+[Learn more about quality attributes](https://msdn.microsoft.com/en-us/library/ee658094.aspx)
