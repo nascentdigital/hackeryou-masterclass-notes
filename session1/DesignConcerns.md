@@ -54,7 +54,7 @@ you consider the nuances of teams of developers working together over as a codeb
 
 ## Software Quality Attributes
 
-Quality attributes help you think about the critical problems that you should aiming
+Quality attributes help you think about the critical problems that you should aim
 to solve in your software design. They are the overall factors that affect run-time
 behavior, system design, and user experience.
 

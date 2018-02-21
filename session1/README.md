@@ -2,11 +2,11 @@
 
 ## A Common Thread
 
-Ironically the subject of software design fundamentals is a broad and complex topic 
+Ironically the subject of software design fundamentals is a broad and complex topic
 that would take hundreds of hours to exhaustively cover.  
 
 Our goal in these sessions is to provide a foundation of understanding, and more
-importantly, to create an awareness of some of the important introduce areas of
+importantly, to create an awareness of some of the important areas of
 computer science in a way that is both practical and to the point.
 
 
