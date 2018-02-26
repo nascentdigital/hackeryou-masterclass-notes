@@ -1,6 +1,22 @@
-## Software Design Principles
+# Software Design Principles
 
-### Separation of Concerns
+![Layered Architecture](images/layered-architecture.png)
+
+Layered architecture is a design pattern that we can use to visualize how we would organize
+functionality within our application. Each layer has a role and responsibility. When using a
+layered architecture approach, there are common design principles that should be considered.
+
+
+![Cart Architecture](images/cart-architecture.png)
+
+Let's look at the example of an online shopping cart feature. Consider how we breakdown the
+functionality into different layers, how each layer will communicate with each other, and
+what that could mean for the overall architecture of our application. (ex. Where should the
+different databases live? What happens if we need to add authentication? How do we handle
+security and validation? How do we handle errors?)
+
+
+## Separation of Concerns
 
 Logical separation between pieces or "layers" of an application.
 ```jsx harmony
@@ -51,7 +67,7 @@ class Cart extends Component {
 ```
 Another example of Separation of concerns in React would be using Redux to handle state changes and propagation throughout application.
 
-Loose vs Tight coupling
+## Loose vs Tight coupling
 
 ### LoD / Encapsulation
 
@@ -119,7 +135,7 @@ const sortAndReverse = string => reverse(sort(string));
 ```
 
 
-### DRY
+## DRY
 
 Don't repeat yourself!
 

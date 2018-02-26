@@ -7,6 +7,7 @@
 assembly / machine code, that can be directly and executed by the underlying hardware or
 virtual machine that it runs ons.  The assembly code is very terse and not meant to be 
 written or read by humans (not anymore at least).
+ex. C++, Swift, Java (compiled to bytecode which is then interpreted)
 
 **Interpreters** take code written in a programming language and run it directly.  This
 is basically code running code, and has the following pros/cons:
@@ -23,6 +24,16 @@ embedded systems and mobile devices.
 - The interpreter can have performance costs as it loads the raw code / script.
 - Because the code isn't compiled, it can blow up at runtime.
 
+ex.
+
+![Swift Compile time error](images/swift-compile-error.png)
+The Swift compiler will tell you before your program runs that something will cause an error.
+
+In comparison, this same mistake in Javascript won't be caught until this code is
+actually executed.
+
+
+
 Compiler and interpreters of functional and object-oriented programming languages share a set
 of core computing and programming concepts:
 - Expressions
@@ -33,8 +44,10 @@ of core computing and programming concepts:
 
 ### JavaScript Engines
 
-JavaScript is a core technology that is actually an interpreter (at least in concept).  There 
-are many flavours of JS engines that we use today:
+The JavaScript engine is a core technology that is actually an interpreter (at least in concept).
+Some JavaScript engines utilize just-in-time (JIT) compilation to byte code.
+JIT compilation combines the speed of compiled code with the flexibility of interpretation.
+There are many flavours of JS engines that we use today:
 - [V8](https://developers.google.com/v8/) for Chrome, NodeJS, and MongoDB (C++)
 - [SpiderMonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey) for Firefox (C++)
 - [Chakra](https://github.com/Microsoft/ChakraCore) for IE / Edge (C++)
@@ -42,7 +55,7 @@ are many flavours of JS engines that we use today:
 
 ## Memory
 
-The fuel of any process is memory (any clock cycles). 
+The fuel of any process is memory (and clock cycles).
 
 Memory is a limited resource, while time (at least to a computer) is not.  It can be extremely 
 constrained on mobile and embedded systems where the device has limited resources in an effort
@@ -66,12 +79,12 @@ Global variables are scoped in a special space that can be read/written from any
 allocated up front when the program starts.
 
 ### Dynamic / Heap Data
-All reference type data is allocated on the "heap", an area of memory where potentially long-running
-or complex data structures are strored.  In JavaScript this is where string, arrays, and object (and
+All __reference__ type data is allocated on the "heap", an area of memory where potentially long-lived
+or complex data structures are stored.  In JavaScript this is where strings, arrays, and objects (and
 their values) are stored.
 
 ### Call Stack
-Any method call context goes here (see below).
+Any function call context goes here (see below).
 
 
 ## Call Stacks
@@ -83,7 +96,7 @@ Each time a function is called a "frame" is added to the stack of calls as an ef
 executing program to capture parameters, local variables, and return values that all get thrown 
 away after a method or closure finishes executing.
  
-![Call Stack](images/callstack.png "Call Stack")
+![Call Stack](images/callstack.jpg "Call Stack")
 
 A couple things to note: 
 - The call stack doesn't include the memory code of the function itself, so calling a large 
